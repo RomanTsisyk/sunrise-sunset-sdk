@@ -46,6 +46,7 @@ publishing {
 
 repositories {
     mavenCentral()
+    google()
 }
 
 dependencies {
@@ -53,7 +54,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3'
-
+    implementation("androidx.annotation:annotation:1.9.0")
     testImplementation 'io.mockk:mockk:1.13.4'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'

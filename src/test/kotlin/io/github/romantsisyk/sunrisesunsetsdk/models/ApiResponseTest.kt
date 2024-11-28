@@ -1,8 +1,10 @@
 package io.github.romantsisyk.sunrisesunsetsdk.models
 
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class ApiResponseTest {
 
@@ -39,5 +41,13 @@ class ApiResponseTest {
         val deserialized = json.decodeFromString(ApiResponse.serializer(), serialized)
         assertTrue(deserialized is ErrorApiResponse)
         assertEquals(response, deserialized)
+    }
+
+    @Test
+    fun `should throw exception for invalid JSON`() {
+        val invalidJson = "{ invalid: true }"
+        assertThrows<SerializationException> {
+            json.decodeFromString(ApiResponse.serializer(), invalidJson)
+        }
     }
 }
