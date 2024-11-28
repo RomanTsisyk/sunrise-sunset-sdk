@@ -1,80 +1,68 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.0.0"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.0"
-    id("maven-publish")
+    id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
+    id 'maven-publish'
 }
 
 group = 'io.github.romantsisyk'
-version = "1.0.0"
+version = '1.0.0'
 
-//publishing {
-//    publications {
-//        create<MavenPublication>("mavenJava") {
-//            from(components["java"])
-//
-//            pom {
-//                name.set("SunriseSunsetSDK")
-//                description.set("An SDK for fetching sunrise and sunset times")
-//                url.set("https://github.com/romantsisyk/sunrisesunset-sdk")
-//                licenses {
-//                    license {
-//                        name.set("MIT License")
-//                        url.set("https://opensource.org/licenses/MIT")
-//                    }
-//                }
-//                developers {
-//                    developer {
-//                        id.set("romantsisyk")
-//                        name.set("Roman Tsisyk")
-//                        email.set("")
-//                    }
-//                }
-//                scm {
-//                    connection.set("scm:git:git://github.com/romantsisyk/sunrisesunset-sdk.git")
-//                    developerConnection.set("scm:git:ssh://github.com/romantsisyk/sunrisesunset-sdk.git")
-//                    url.set("https://github.com/romantsisyk/sunrisesunset-sdk")
-//                }
-//            }
-//        }
-//    }
-//    repositories {
-//        maven {
-//            name = "GitHubPackages"
-//            url = uri("https://maven.pkg.github.com/romantsisyk/sunrisesunset-sdk")
-//            credentials {
-//                username = System.getenv("")
-//                password = System.getenv("")
-//            }
-//        }
-//    }
-//}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = "com.github.romantsisyk"
+            artifactId = 'sunrise-sunset-sdk'
+            version = '1.0.0'
 
-repositories {
-    mavenCentral()
-}
+            pom {
+                name.set('Sunrise Sunset SDK')
+                description.set('A Kotlin SDK for Sunrise and Sunset calculations.')
+                url.set('https://github.com/RomanTsisyk/sunrise-sunset-sdk')
+                licenses {
+                    license {
+                        name.set('MIT License') // Fixed syntax
+                        url.set('https://opensource.org/licenses/MIT') // Fixed syntax
+                    }
+                }
 
-configurations.all {
-    resolutionStrategy.capabilitiesResolution.withCapability("org.jetbrains.kotlin:kotlin-test-framework-impl") {
-        select("org.jetbrains.kotlin:kotlin-test-junit5")
+                developers {
+                    developer {
+                        id.set('romantsisyk') // Fixed syntax
+                        name.set('Roman Tsisyk') // Fixed syntax
+                        email.set('your.email@example.com') // Fixed syntax
+                    }
+                }
+
+                scm {
+                    connection.set('scm:git:git://github.com/RomanTsisyk/sunrise-sunset-sdk.git') // Fixed syntax
+                    developerConnection.set('scm:git:ssh://github.com/RomanTsisyk/sunrise-sunset-sdk.git') // Fixed syntax
+                    url.set('https://github.com/RomanTsisyk/sunrise-sunset-sdk') // Fixed syntax
+                }
+            }
+        }
     }
 }
 
+repositories {
+    mavenCentral()
+    google()
+}
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
-
-    testImplementation("io.mockk:mockk:1.13.4")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3'
+    implementation("androidx.annotation:annotation:1.9.0")
+    testImplementation 'io.mockk:mockk:1.13.4'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
 
 tasks.test {
-    useJUnitPlatform() // Explicitly use JUnit Platform for tests
+    useJUnitPlatform()
 }
-
 
 kotlin {
     jvmToolchain(17)
