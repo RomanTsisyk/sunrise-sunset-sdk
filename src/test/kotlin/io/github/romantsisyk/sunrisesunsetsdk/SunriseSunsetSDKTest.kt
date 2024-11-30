@@ -189,4 +189,51 @@ class SunriseSunsetSDKTest {
         assertEquals("5:28:02 PM", successResponse.results.sunset)
         assertEquals("11:28:51 AM", successResponse.results.solarNoon)
     }
+
+    @Test
+    fun `should throw SunriseSunsetException on missing status field`() {
+        val lat = 4.0
+        val lng = 4.0
+        val url = "$baseUrl?lat=$lat&lng=$lng"
+        val sampleMissingStatusResponse = """{ "results": {} }""".trimIndent()
+
+        mockResponse(url, sampleMissingStatusResponse)
+
+        assertThrows(SunriseSunsetException::class.java) {
+            sdk.getSunTimes(lat, lng)
+        }
+    }
+
+    @Test
+    fun `should throw SunriseSunsetException on malformed JSON`() {
+        val lat = 4.0
+        val lng = 4.0
+        val url = "$baseUrl?lat=$lat&lng=$lng"
+        val sampleMalformedJson = """{ "results": }""" // Malformed JSON
+
+        mockResponse(url, sampleMalformedJson)
+
+        assertThrows(SunriseSunsetException::class.java) {
+            sdk.getSunTimes(lat, lng)
+        }
+    }
+
+    @Test
+    fun `should handle SunriseSunsetException correctly`() {
+        val lat = 4.0
+        val lng = 4.0
+        val url = "$baseUrl?lat=$lat&lng=$lng"
+        val sampleUnknownErrorResponse = """
+        {
+            "results": "",
+            "status": "${SunriseSunsetSDK.STATUS_UNKNOWN_ERROR}"
+        }
+    """.trimIndent()
+
+        mockResponse(url, sampleUnknownErrorResponse)
+
+        assertThrows(SunriseSunsetException::class.java) {
+            sdk.getSunTimes(lat, lng)
+        }
+    }
 }

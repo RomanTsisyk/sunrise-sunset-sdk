@@ -16,8 +16,8 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
 class SunriseSunsetSDK(
-    private val networkClient: NetworkClient,
-    private val jsonParser: Json
+    internal val networkClient: NetworkClient,
+    internal val jsonParser: Json
 ) {
 
     companion object {
