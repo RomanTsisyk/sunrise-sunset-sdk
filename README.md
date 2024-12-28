@@ -37,12 +37,12 @@ The Sunrise-Sunset App is a **demonstration application** built to test and show
 ### **Mobile Screenshots**
 | **City Selection Dropdown** | **Example Data for Ternopil** | **Example Data for Wroclaw** | **Example Data for Chicago** |
 |-----------------------------|------------------------------|------------------------------|-------------------------------|
-| <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241206_192236.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241206_192225.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241206_192250.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241206_192300.png" width="100%" /> |
+| <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241206_192236.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241206_192225.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241206_192250.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241206_192300.png" width="100%" /> |
 
 ### **Wear OS Screenshots**
 | **Sunrise and Sunset Times** | **Solar Noon and Day Length** | **Twilight Timings** |
 |-----------------------------|-------------------------------|-----------------------|
-| <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241228_221014.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241229_001459.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot_20241229_001508.png" width="100%" /> |
+| <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241228_221014.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241229_001459.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241229_001508.png" width="100%" /> |
 
 ---
 
