@@ -1,34 +1,31 @@
-# **Sunrise-Sunset App**
+![License](https://img.shields.io/github/license/RomanTsisyk/SunriseSunset-SDK-Demo-Android-and-WearOs)
+![Build Status](https://img.shields.io/github/actions/workflow/status/RomanTsisyk/SunriseSunset-SDK-Demo-Android-and-WearOs/ci.yml)
+![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20Wear%20OS-green)
 
-## **Overview**
-The Sunrise-Sunset App is a **demonstration application** built to test and showcase the capabilities of the **[Sunrise-Sunset SDK](https://github.com/RomanTsisyk/sunrise-sunset-sdk)**. This app fetches and displays detailed solar and twilight timing information for selected cities using the SDK. It provides a practical example of how to integrate the Sunrise-Sunset SDK into a modern Android app.
+
+# Sunrise-Sunset App
+
+The **Sunrise-Sunset App** is a demo project showcasing the functionality of the [Sunrise-Sunset SDK](https://github.com/RomanTsisyk/SunriseSunset-SDK). It provides accurate sunrise, sunset, and twilight times for selected locations on both **Android** and **Wear OS** platforms.
+
+> **Note**: This repository is meant as an example of how to use the Sunrise-Sunset SDK in a real-world project.
 
 ---
 
 ## **Features**
 
-### **Mobile Features**
-- **Powered by the Sunrise-Sunset SDK**:
-    - Fetches sunrise, sunset, solar noon, day length, and twilight timings (civil, nautical, and astronomical) for specified locations.
-- Displays:
-    - **Sunrise** and **Sunset** times
-    - **Solar Noon**
-    - **Day Length**
-    - **Civil Twilight Begin** and **End**
-    - **Nautical Twilight Begin** and **End**
-    - **Astronomical Twilight Begin** and **End**
-- Dropdown menu for city selection
-- Elegant card layout with icon-based representation
-- Gradient background and footer indicating demo purpose
+- 🌅 **Sunrise, Sunset, and Twilight Times**: Displays key solar events for selected locations.
+- 📱 **Multi-Platform Support**: Fully compatible with Android and Wear OS devices.
+- 🛠️ **Modern Architecture**: Built with clean architecture principles and Jetpack Compose for UI.
+- 🔄 **SDK Integration**: Demonstrates integration of the Sunrise-Sunset SDK for seamless solar calculations.
 
-### **Wear OS Features**
-- Optimized for Wear OS devices.
-- Displays:
-    - **Sunrise** and **Sunset** times
-    - **Solar Noon**
-    - **Day Length**
-    - **Civil, Nautical, and Astronomical Twilight** timings
-- Compact and user-friendly interface for small screens.
+---
+
+## Tech Stack
+
+- **Kotlin**: Primary language for development.
+- **Jetpack Compose**: Modern, declarative UI framework for Android.
+- **Gradle**: Build automation tool.
+- **Sunrise-Sunset SDK**: [Your custom SDK](https://github.com/RomanTsisyk/SunriseSunset-SDK) for solar event calculations.
 
 ---
 
@@ -43,26 +40,6 @@ The Sunrise-Sunset App is a **demonstration application** built to test and show
 | **Sunrise and Sunset Times** | **Solar Noon and Day Length** | **Twilight Timings** |
 |-----------------------------|-------------------------------|-----------------------|
 | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241228_221014.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241229_001459.png" width="100%" /> | <img src="https://raw.githubusercontent.com/RomanTsisyk/SunriseSunset-Android-App/master/Screenshot/Screenshot_20241229_001508.png" width="100%" /> |
-
----
-
-## **How to Use**
-
-### **Mobile Application**
-1. **Launch the App**:
-   Open the Sunrise-Sunset App on your device or emulator.
-2. **Select a City**:
-   Use the dropdown menu to select a city from the list.
-3. **View Data**:
-   The app will fetch and display sunrise, sunset, and twilight times for the selected city.
-
-### **Wear OS Application**
-1. **Install the App**:
-   Install the Sunrise-Sunset Wear OS app on your smartwatch.
-2. **Open the App**:
-   Launch the app from your smartwatch.
-3. **View Data**:
-   The app will display solar timings optimized for your Wear OS device.
 
 ---
 
