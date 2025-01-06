@@ -1,11 +1,9 @@
-![release](https://img.shields.io/badge/release-v1.0.0-blue)
-![platform](https://img.shields.io/badge/platform-JVM%20|%20Kotlin-lightgrey)
-![kotlin](https://img.shields.io/badge/Kotlin-2.0.0-orange)
-![jvm](https://img.shields.io/badge/JVM-17-green)
-![build](https://img.shields.io/badge/Build%20System-Gradle-lightgrey)
-![license](https://img.shields.io/badge/license-MIT-brightgreen)
 
- # **Sunrise-Sunset SDK for Kotlin**
+---
+
+![release](https://img.shields.io/badge/release-v1.0.0-blue)  ![platform](https://img.shields.io/badge/platform-JVM%20|%20Kotlin-lightgrey)  ![kotlin](https://img.shields.io/badge/Kotlin-2.0.0-orange)  ![jvm](https://img.shields.io/badge/JVM-17-green)  ![build](https://img.shields.io/badge/Build%20System-Gradle-lightgrey)  ![license](https://img.shields.io/badge/license-MIT-brightgreen)  
+
+# **Sunrise-Sunset SDK for Kotlin**
 
 A Kotlin SDK to interact with the [Sunrise-Sunset API](https://sunrise-sunset.org/api), providing accurate sunrise and sunset times based on geographic coordinates. The SDK allows developers to easily retrieve sunrise and sunset times, solar noon, day length, and twilight information for any given location and date.
 
@@ -13,17 +11,12 @@ A Kotlin SDK to interact with the [Sunrise-Sunset API](https://sunrise-sunset.or
 
 ## **Note**
 
-This SDK is currently a **test project** designed to explore and understand the complete lifecycle of creating, testing, and publishing a library. While the SDK is fully functional and adheres to best practices, it is not yet published to a public repository such as Maven Central or JitPack.
+This SDK is currently a **test project** designed to explore and understand the complete lifecycle of creating, testing, and publishing a library. While the SDK is fully functional and adheres to best practices, it will not be officially published to a public repository (e.g., Maven Central, JitPack).
 
-**Plans for the Future:**
-- The SDK will be officially published.
-- Long-term support is not guaranteed at this stage but may be considered depending on usage.
-- The Sunrise-Sunset API itself is stable, but the SDK does not anticipate or account for potential API changes or the addition of new functionality.
-
-This is primarily a **learning and experimentation project** to understand:
-1. Creating a reusable SDK.
-2. Testing all aspects of the development lifecycle.
-3. Exploring the process of publishing a library for public use.
+### **Repository Status**
+- This repository will be **publicly archived** as a reference project.
+- No future updates or support are guaranteed.
+- The purpose of this project is to showcase my ability to create and work with SDKs.
 
 ---
 
@@ -38,45 +31,19 @@ This is primarily a **learning and experimentation project** to understand:
 
 ---
 
-## Test Coverage Summary
+## **Demo App**
 
-The project has been extensively tested to ensure reliability and robustness.
+This repository includes a `demo-app` folder that demonstrates the usage of the manually compiled `sunrise-sunset-sdk-1.0.0` library. The demo app showcases the functionality of the SDK and how it can be integrated into Android and Wear OS applications.
 
-| **Component**                | **Class (%)** | **Method (%)** | **Line (%)** | **Branch (%)** |
-|-------------------------------|---------------|----------------|--------------|----------------|
-| **Overall Coverage**          | **100%**      | **97%**        | **98%**      | **75%**        |
-| **Exceptions**                | 100%          | 100%           | 100%         | 100%           |
-| **Models**                    | 100%          | 100%           | 100%         | 50%            |
-| **Network**                   | 100%          | 100%           | 100%         | 83%            |
-| **Utils**                     | 100%          | 100%           | 100%         | 100%           |
-| **SDK Core (SDK & Builder)**  | 100%          | 92%            | 89%          | 91%            |
+### **Demo App Highlights:**
+- Provides a working example of how to integrate the SDK.
+- Demonstrates both synchronous and asynchronous calls to fetch sunrise and sunset times.
+- Includes a Wear OS implementation to explore its flexibility.
 
----
-
-## **Installation**
-
-**This project is not yet published** to any public repository. Once published, the installation process will be as follows:
-
-### **Using Gradle (JitPack)**
-
-1. **Add JitPack repository to your `build.gradle.kts` file:**
-
-   ```kotlin
-   repositories {
-       mavenCentral()
-       maven("https://jitpack.io")
-   }
-   ```
-
-2. **Add the SDK dependency:**
-
-   ```kotlin
-   dependencies {
-       implementation("io.github.romantsisyk:sunrisesunsetsdk:v1.0.0")
-   }
-   ```
-
-3. **Sync your project** to download and integrate the SDK.
+### **Important Notes**:
+- The `sunrise-sunset-sdk-1.0.0` used in the demo app was manually compiled as part of this project.
+- **This SDK will not be published** to any public repository.
+- This project serves as a test to evaluate my skills in building and integrating an SDK.
 
 ---
 
@@ -95,8 +62,6 @@ val sdk = SunriseSunsetSDK.builder().build()
 
 ### **Fetching Sunrise and Sunset Times**
 
-You can use both synchronous and asynchronous methods to fetch the sun times.
-
 #### **Synchronous Example:**
 
 ```kotlin
@@ -107,7 +72,7 @@ try {
     val response = sdk.getSunTimes(
         lat = lat,
         lng = lng,
-        date = "2024-11-16",
+        date = "today", // Fetch for today's date
         formatted = 0, // Use 0 to get ISO 8601 formatted times
         tzid = TimeZoneID.EUROPE_LONDON // Optional: Specify a timezone (e.g., Europe/London)
     )
@@ -153,7 +118,7 @@ runBlocking {
 
 ## **Project Structure**
 
-The project follows a simple and modular structure to keep the code organized and maintainable:
+The project follows a modular structure for better organization and maintainability:
 
 ```
 io.github.romantsisyk.sunrisesunsetsdk
@@ -186,28 +151,34 @@ io.github.romantsisyk.sunrisesunsetsdk
 
 ## **Known Limitations**
 
-1. **Future API Changes:** The SDK is built for the current version of the Sunrise-Sunset API and does not predict future changes or new features.
-2. **Lack of Offline Support:** The SDK does not include offline caching at this time.
-3. **No Localization:** The SDK currently supports English-only error messages and responses.
+1. **Future API Changes**: The SDK is built for the current version of the Sunrise-Sunset API.
+2. **No Offline Support**: This SDK does not include offline caching.
+3. **Localization**: Currently, the SDK supports English-only error messages and responses.
 
 ---
 
 ## **Future Plans**
 
-- **Publication:** The SDK may be published to **JitPack** or **Maven Central** as a test case to explore the publishing process.
-- **Feature Enhancements:** Additional functionality, such as caching, localization, and weather integration, may be added based on feedback and demand.
-- **Support:** While the SDK is not guaranteed long-term support, it will likely be updated if the need arises or the API changes.
+- **Public Archive**: This repository will remain publicly accessible for reference.
+- **Feature Enhancements**: If further interest arises, caching and other features may be explored.
 
 ---
 
 ## **Contributing**
 
-This project is open for contributions, especially from developers who want to explore SDK development or propose improvements.
+Contributions are welcome for developers interested in SDK development or proposing improvements.
 
 ---
 
 ## **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
 ---
+
+### **Key Updates**
+- Added a clear note about **public archiving**.
+- Expanded the demo app section with more details.
+- Adjusted code examples for clarity.
+
+Let me know if you’d like further refinements! 😊
