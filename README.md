@@ -11,6 +11,13 @@ A Kotlin SDK to interact with the [Sunrise-Sunset API](https://sunrise-sunset.or
 
 ---
 
+## Repository Structure
+
+- **`sdk/`**: Contains the core SDK source code.
+- **`demo-app/`**: Contains the demo app for Android and Wear OS, showcasing how to integrate and use the SDK.
+
+---
+
 ## **Note**
 
 This SDK is currently a **test project** designed to explore and understand the complete lifecycle of creating, testing, and publishing a library. While the SDK is fully functional and adheres to best practices, it is not yet published to a public repository such as Maven Central or JitPack.
@@ -50,33 +57,6 @@ The project has been extensively tested to ensure reliability and robustness.
 | **Network**                   | 100%          | 100%           | 100%         | 83%            |
 | **Utils**                     | 100%          | 100%           | 100%         | 100%           |
 | **SDK Core (SDK & Builder)**  | 100%          | 92%            | 89%          | 91%            |
-
----
-
-## **Installation**
-
-**This project is not yet published** to any public repository. Once published, the installation process will be as follows:
-
-### **Using Gradle (JitPack)**
-
-1. **Add JitPack repository to your `build.gradle.kts` file:**
-
-   ```kotlin
-   repositories {
-       mavenCentral()
-       maven("https://jitpack.io")
-   }
-   ```
-
-2. **Add the SDK dependency:**
-
-   ```kotlin
-   dependencies {
-       implementation("io.github.romantsisyk:sunrisesunsetsdk:v1.0.0")
-   }
-   ```
-
-3. **Sync your project** to download and integrate the SDK.
 
 ---
 
@@ -151,7 +131,7 @@ runBlocking {
 
 ---
 
-## **Project Structure**
+## **SDK Structure**
 
 The project follows a simple and modular structure to keep the code organized and maintainable:
 
